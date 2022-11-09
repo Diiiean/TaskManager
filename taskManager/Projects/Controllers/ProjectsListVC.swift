@@ -1,6 +1,6 @@
 import UIKit
 
-class ProjectsListVC: UIViewController {
+final class ProjectsListVC: UIViewController {
     
     private var projectsTableView: UITableView = {
                 let tableView = UITableView()
@@ -15,29 +15,16 @@ class ProjectsListVC: UIViewController {
            loader.hidesWhenStopped = true
            return loader
        }()
-   private var viewModel: ProjectListViewModel
-
-    init(viewModel: ProjectListViewModel = ProjectListViewModel()) {
-            self.viewModel = viewModel
-            super.init(nibName: nil, bundle: .main)
-        }
-    required init?(coder: NSCoder) {
-           fatalError("init(coder:) has not been implemented")
-       }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
         setUpView()
         setupNavigationBar()
         configureTableView()
-       // configureBarItems()
-        getCurrSavedProject()
-        //Get all current saved tasks
+        updateProjects()
+
     }
-  
-    
-    func getCurrSavedProject() {
+    func updateProjects() {
         
     }
     //Selectors
@@ -46,13 +33,21 @@ class ProjectsListVC: UIViewController {
         projectEntryVC.title = "Новый проект"
         navigationController?.pushViewController(projectEntryVC, animated: true)
     }
+    @objc func refresh() {
+
+      // refresh the tableView
+        print("viewModel.numberOfItems  \(ProjectListViewModel.shared.numberOfItems)")
+        self.projectsTableView.reloadData()
+
+   }
 }
 // MARK: - Setup
 private extension ProjectsListVC {
     func setUp() {
         projectsTableView.delegate = self
         projectsTableView.dataSource = self
-        viewModel.delegate = self
+       // viewModel.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh), name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
     }
 
     func setUpView() {
@@ -66,11 +61,6 @@ private extension ProjectsListVC {
                                                             style: .done, target: self,
                                                             action: #selector(addButtTapped))
     }
-//    func configureBarItems() {
-////        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Добавить",
-////                                                            style: .done, target: self,
-////                                                            action: #selector(addButtTapped))
-//    }
 }
 // MARK: - Layout
 private extension ProjectsListVC {
@@ -97,12 +87,14 @@ extension ProjectsListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //Setting max number of rows according settings recordsCountTextField input
 //        guard let numOfRows = Int(UserDefaults.standard.value(forKey: "recordsCount") as! String)  else { return 0 }
 //
 //        return  numOfRows
-        return viewModel.numberOfItems
+       
+        return ProjectListViewModel.shared.numberOfItems
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let projectCell = tableView.dequeueReusableCell(withIdentifier: ProjectTableViewCell.identifier, for: indexPath) as! ProjectTableViewCell
@@ -115,7 +107,8 @@ extension ProjectsListVC: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: ProjectTableViewCell.identifier,
             for: indexPath
         ) as? ProjectTableViewCell else { return UITableViewCell() }
-        cell.viewModel = viewModel.item(at: indexPath.row)
+//        cell.viewModel = viewModel.item(at: indexPath.row)
+        cell.viewModel = ProjectListViewModel.shared.item(at: indexPath.row)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

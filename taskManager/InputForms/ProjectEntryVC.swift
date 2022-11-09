@@ -1,6 +1,6 @@
 import UIKit
 
-class ProjectEntryVC: UIViewController {
+final class ProjectEntryVC: UIViewController {
     private let projectNameLbl: UILabel = {
         let label = UILabel()
         label.text = "Название проекта"
@@ -70,6 +70,15 @@ class ProjectEntryVC: UIViewController {
         stack.addArrangedSubview(cancelButt)
         return stack
     }()
+    private var viewModel: ProjectListViewModel
+
+     init(viewModel: ProjectListViewModel = ProjectListViewModel()) {
+             self.viewModel = viewModel
+             super.init(nibName: nil, bundle: .main)
+         }
+     required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     
     @objc func saveTapped() {
         let alertController = UIAlertController(title: "Данные сохранены", message: "", preferredStyle: .alert)
@@ -77,7 +86,13 @@ class ProjectEntryVC: UIViewController {
             self?.projectNameField.text = ""
             self?.projectDescriptionField.text = ""
         }))
+        guard let projectName = projectNameField.text, let projectDescr = projectDescriptionField.text, !projectName.isEmpty, !projectDescr.isEmpty else { return }
+        let newProject = ProjectCellModel(title: projectName, description: projectDescr)
+        ProjectListViewModel.shared.saveProjects(data: newProject)
+    //notificationCenter for the reload tableView data
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
         self.present(alertController, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func cancelTapped() {
@@ -107,6 +122,7 @@ private extension ProjectEntryVC {
     func setUp() {
         projectNameField.delegate = self
         projectDescriptionField.delegate = self
+        
     }
     func setUpView() {
         view.backgroundColor = .systemBackground

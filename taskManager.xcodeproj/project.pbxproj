@@ -11,7 +11,7 @@
 		0412268B291BDD58007993A5 /* ProjectsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412268A291BDD58007993A5 /* ProjectsListVC.swift */; };
 		0412268E291BDD85007993A5 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412268D291BDD85007993A5 /* ProjectTableViewCell.swift */; };
 		04122690291BDDA2007993A5 /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412268F291BDDA2007993A5 /* ProjectListViewModel.swift */; };
-		04122692291BDDB1007993A5 /* ProjectCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122691291BDDB1007993A5 /* ProjectCellViewModel.swift */; };
+		04122692291BDDB1007993A5 /* ProjectCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122691291BDDB1007993A5 /* ProjectCellModel.swift */; };
 		04122695291BDE4D007993A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122694291BDE4D007993A5 /* NetworkManager.swift */; };
 		04122697291BDE69007993A5 /* ProjectListUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122696291BDE69007993A5 /* ProjectListUploader.swift */; };
 		04122699291BDF16007993A5 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122698291BDF16007993A5 /* UITableView.swift */; };
@@ -30,7 +30,7 @@
 		0412268A291BDD58007993A5 /* ProjectsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListVC.swift; sourceTree = "<group>"; };
 		0412268D291BDD85007993A5 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		0412268F291BDDA2007993A5 /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
-		04122691291BDDB1007993A5 /* ProjectCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellViewModel.swift; sourceTree = "<group>"; };
+		04122691291BDDB1007993A5 /* ProjectCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellModel.swift; sourceTree = "<group>"; };
 		04122694291BDE4D007993A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		04122696291BDE69007993A5 /* ProjectListUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListUploader.swift; sourceTree = "<group>"; };
 		04122698291BDF16007993A5 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
@@ -60,6 +60,7 @@
 		0412267F291BDC07007993A5 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				0412269E291BFEE1007993A5 /* Model */,
 				0412268C291BDD67007993A5 /* Cells */,
 				04122686291BDCC3007993A5 /* Controllers */,
 				04122685291BDCB2007993A5 /* ViewModels */,
@@ -105,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				0412268F291BDDA2007993A5 /* ProjectListViewModel.swift */,
-				04122691291BDDB1007993A5 /* ProjectCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -157,6 +157,14 @@
 				0412269B291BDF84007993A5 /* SettingsVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0412269E291BFEE1007993A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04122691291BDDB1007993A5 /* ProjectCellModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		04AF2DE2291B74D100083115 = {
@@ -281,7 +289,7 @@
 			files = (
 				04AF2DF3291B74D100083115 /* SplashScreen.swift in Sources */,
 				04AF2DEF291B74D100083115 /* AppDelegate.swift in Sources */,
-				04122692291BDDB1007993A5 /* ProjectCellViewModel.swift in Sources */,
+				04122692291BDDB1007993A5 /* ProjectCellModel.swift in Sources */,
 				04AF2E07291B7ADF00083115 /* UIStackView.swift in Sources */,
 				04122695291BDE4D007993A5 /* NetworkManager.swift in Sources */,
 				04AF2DF1291B74D100083115 /* SceneDelegate.swift in Sources */,

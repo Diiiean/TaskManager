@@ -38,7 +38,7 @@ import UIKit
         return stack
     }()
     
-    var viewModel: ProjectCellViewModel? {
+    var viewModel: ProjectCellModel? {
         didSet {
             titleLabel.text = viewModel?.title
             descriptionLabel.text = viewModel?.description
