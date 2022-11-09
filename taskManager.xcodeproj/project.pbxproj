@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04122689291BDD17007993A5 /* ProjectEntryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122688291BDD17007993A5 /* ProjectEntryVC.swift */; };
+		0412268B291BDD58007993A5 /* ProjectsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412268A291BDD58007993A5 /* ProjectsListVC.swift */; };
+		0412268E291BDD85007993A5 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412268D291BDD85007993A5 /* ProjectTableViewCell.swift */; };
+		04122690291BDDA2007993A5 /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412268F291BDDA2007993A5 /* ProjectListViewModel.swift */; };
+		04122692291BDDB1007993A5 /* ProjectCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122691291BDDB1007993A5 /* ProjectCellViewModel.swift */; };
+		04122695291BDE4D007993A5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122694291BDE4D007993A5 /* NetworkManager.swift */; };
+		04122697291BDE69007993A5 /* ProjectListUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122696291BDE69007993A5 /* ProjectListUploader.swift */; };
+		04122699291BDF16007993A5 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122698291BDF16007993A5 /* UITableView.swift */; };
+		0412269C291BDF84007993A5 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0412269B291BDF84007993A5 /* SettingsVC.swift */; };
 		04AF2DEF291B74D100083115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2DEE291B74D100083115 /* AppDelegate.swift */; };
 		04AF2DF1291B74D100083115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2DF0291B74D100083115 /* SceneDelegate.swift */; };
 		04AF2DF3291B74D100083115 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF2DF2291B74D100083115 /* SplashScreen.swift */; };
@@ -17,6 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04122688291BDD17007993A5 /* ProjectEntryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEntryVC.swift; sourceTree = "<group>"; };
+		0412268A291BDD58007993A5 /* ProjectsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsListVC.swift; sourceTree = "<group>"; };
+		0412268D291BDD85007993A5 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		0412268F291BDDA2007993A5 /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
+		04122691291BDDB1007993A5 /* ProjectCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCellViewModel.swift; sourceTree = "<group>"; };
+		04122694291BDE4D007993A5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		04122696291BDE69007993A5 /* ProjectListUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListUploader.swift; sourceTree = "<group>"; };
+		04122698291BDF16007993A5 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		0412269B291BDF84007993A5 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		04AF2DEB291B74D100083115 /* taskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04AF2DEE291B74D100083115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04AF2DF0291B74D100083115 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +57,108 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0412267F291BDC07007993A5 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				0412268C291BDD67007993A5 /* Cells */,
+				04122686291BDCC3007993A5 /* Controllers */,
+				04122685291BDCB2007993A5 /* ViewModels */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		04122680291BDC31007993A5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				04AF2DEE291B74D100083115 /* AppDelegate.swift */,
+				04AF2DF0291B74D100083115 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		04122681291BDC4E007993A5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				04122682291BDC5C007993A5 /* Controller */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		04122682291BDC5C007993A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04AF2E03291B7A6300083115 /* MenuViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04122684291BDC99007993A5 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04AF2DF2291B74D100083115 /* SplashScreen.swift */,
+				04AF2DF9291B74D200083115 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		04122685291BDCB2007993A5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0412268F291BDDA2007993A5 /* ProjectListViewModel.swift */,
+				04122691291BDDB1007993A5 /* ProjectCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		04122686291BDCC3007993A5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0412268A291BDD58007993A5 /* ProjectsListVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04122687291BDCF8007993A5 /* InputForms */ = {
+			isa = PBXGroup;
+			children = (
+				04122688291BDD17007993A5 /* ProjectEntryVC.swift */,
+			);
+			path = InputForms;
+			sourceTree = "<group>";
+		};
+		0412268C291BDD67007993A5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0412268D291BDD85007993A5 /* ProjectTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		04122693291BDE33007993A5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04122694291BDE4D007993A5 /* NetworkManager.swift */,
+				04122696291BDE69007993A5 /* ProjectListUploader.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0412269A291BDF72007993A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0412269D291BDF90007993A5 /* Controller */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0412269D291BDF90007993A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0412269B291BDF84007993A5 /* SettingsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		04AF2DE2291B74D100083115 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +178,15 @@
 		04AF2DED291B74D100083115 /* taskManager */ = {
 			isa = PBXGroup;
 			children = (
+				0412269A291BDF72007993A5 /* Settings */,
+				04122693291BDE33007993A5 /* Networking */,
+				0412267F291BDC07007993A5 /* Projects */,
+				04122681291BDC4E007993A5 /* Menu */,
+				04122687291BDCF8007993A5 /* InputForms */,
+				04122684291BDC99007993A5 /* LaunchScreen */,
+				04122680291BDC31007993A5 /* Application */,
 				04AF2E05291B7AC900083115 /* Extensions */,
 				04AF2E02291B766700083115 /* SupportingFiles */,
-				04AF2DEE291B74D100083115 /* AppDelegate.swift */,
-				04AF2DF0291B74D100083115 /* SceneDelegate.swift */,
-				04AF2DF2291B74D100083115 /* SplashScreen.swift */,
-				04AF2DF9291B74D200083115 /* LaunchScreen.storyboard */,
-				04AF2E03291B7A6300083115 /* MenuViewController.swift */,
 			);
 			path = taskManager;
 			sourceTree = "<group>";
@@ -82,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				04AF2E06291B7ADF00083115 /* UIStackView.swift */,
+				04122698291BDF16007993A5 /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,9 +281,18 @@
 			files = (
 				04AF2DF3291B74D100083115 /* SplashScreen.swift in Sources */,
 				04AF2DEF291B74D100083115 /* AppDelegate.swift in Sources */,
+				04122692291BDDB1007993A5 /* ProjectCellViewModel.swift in Sources */,
 				04AF2E07291B7ADF00083115 /* UIStackView.swift in Sources */,
+				04122695291BDE4D007993A5 /* NetworkManager.swift in Sources */,
 				04AF2DF1291B74D100083115 /* SceneDelegate.swift in Sources */,
+				04122690291BDDA2007993A5 /* ProjectListViewModel.swift in Sources */,
 				04AF2E04291B7A6300083115 /* MenuViewController.swift in Sources */,
+				04122689291BDD17007993A5 /* ProjectEntryVC.swift in Sources */,
+				0412268B291BDD58007993A5 /* ProjectsListVC.swift in Sources */,
+				04122699291BDF16007993A5 /* UITableView.swift in Sources */,
+				0412268E291BDD85007993A5 /* ProjectTableViewCell.swift in Sources */,
+				04122697291BDE69007993A5 /* ProjectListUploader.swift in Sources */,
+				0412269C291BDF84007993A5 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

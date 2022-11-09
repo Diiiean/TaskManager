@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  taskManager
-//
-//  Created by Диана Нуансенгси on 9.11.22.
-//
-
 import UIKit
 
 @main

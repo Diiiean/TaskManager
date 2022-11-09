@@ -1,7 +1,7 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
+    
     private var projectsButt: UIButton = {
         let butt = UIButton()
         butt.backgroundColor = .systemTeal
@@ -43,43 +43,43 @@ class MenuViewController: UIViewController {
     }()
     
     @objc func projectsTapped() {
-//        let projectsVC = ProjectsListVC()
-//        projectsVC.title = "Список проектов"
-//        navigationController?.pushViewController(projectsVC, animated: true)
+                let projectsVC = ProjectsListVC()
+                projectsVC.title = "Список проектов"
+                navigationController?.pushViewController(projectsVC, animated: true)
     }
     @objc func employeesTapped() {
-//        let employeesVC = EmployeesListVC()
-//        employeesVC.title = "Список работников"
-//        navigationController?.pushViewController(employeesVC, animated: true)
+        //        let employeesVC = EmployeesListVC()
+        //        employeesVC.title = "Список работников"
+        //        navigationController?.pushViewController(employeesVC, animated: true)
     }
     @objc func tasksTapped() {
         print("tasksTapped")
     }
     @objc func settingsTapped() {
-//        let settingsVC = SettingsVC()
-//        settingsVC.title = "Настройки"
-//        navigationController?.pushViewController(settingsVC, animated: true)
+                let settingsVC = SettingsVC()
+                settingsVC.title = "Настройки"
+                navigationController?.pushViewController(settingsVC, animated: true)
     }
     lazy var vStackView: UIStackView = {
-            let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-            stack.axis = .vertical
-            stack.alignment = .fill
-            stack.spacing = 40
+        let stack = UIStackView()
+       // stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.spacing = 40
         stack.distribution = .fillEqually
-            stack.clipsToBounds = true
-            stack.backgroundColor = .systemTeal
-            stack.addArrangedSubview(projectsButt)
-            stack.addArrangedSubview(tasksButt)
-            stack.addArrangedSubview(employeesButt)
-            stack.addArrangedSubview(settingsButt)
-            return stack
-        }()
+        stack.clipsToBounds = true
+        //stack.backgroundColor = .systemTeal
+        stack.addArrangedSubview(projectsButt)
+        stack.addArrangedSubview(tasksButt)
+        stack.addArrangedSubview(employeesButt)
+        stack.addArrangedSubview(settingsButt)
+        return stack
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-       //configureStack()
-        configureButtons()
+        configureStack()
+        // configureButtons()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -104,7 +104,7 @@ class MenuViewController: UIViewController {
         view.addSubview(settingsButt)
         NSLayoutConstraint.activate([
             //Projects Butt
-           projectsButt.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 180),
+            projectsButt.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 180),
             projectsButt.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
             projectsButt.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
             projectsButt.bottomAnchor.constraint(equalTo: employeesButt.topAnchor, constant: -20),
@@ -132,17 +132,17 @@ class MenuViewController: UIViewController {
             settingsButt.heightAnchor.constraint(equalTo:employeesButt.heightAnchor),
         ])
     }
-//    func configureStackView() {
-//        view.addSubview(stackView)
-//        //Constraints
-//        setStackViewConstraints()
-//    }
-//    func setStackViewConstraints() {
-//        stackView.translatesAutoresizingMaskIntoConstraints                                                          = false
-//        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive           = true
-//        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50).isActive   = true
-//        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50).isActive = true
-//        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200).isActive    = true
-//    }
+    //    func configureStackView() {
+    //        view.addSubview(stackView)
+    //        //Constraints
+    //        setStackViewConstraints()
+    //    }
+    //    func setStackViewConstraints() {
+    //        stackView.translatesAutoresizingMaskIntoConstraints                                                          = false
+    //        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive           = true
+    //        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50).isActive   = true
+    //        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50).isActive = true
+    //        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -200).isActive    = true
+    //    }
 }
 
