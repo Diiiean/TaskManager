@@ -24,8 +24,12 @@ final class ProjectListViewModel {
         ProjectListUploader.saveProjects(
             manager: networkManager)
         //задержка (1000мс)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {}
-        self.items.append(data)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            self.items.append(data)
+            //notificationCenter for the reload tableView data
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newDataNotif"), object: nil)
+        }
+     
 print(items)
         DispatchQueue.main.async {
             self.delegate?.shouldReloadTableView()
