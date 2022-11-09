@@ -89,25 +89,13 @@ extension ProjectsListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //Setting max number of rows according settings recordsCountTextField input
-//        guard let numOfRows = Int(UserDefaults.standard.value(forKey: "recordsCount") as! String)  else { return 0 }
-//
-//        return  numOfRows
-       
         return ProjectListViewModel.shared.numberOfItems
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let projectCell = tableView.dequeueReusableCell(withIdentifier: ProjectTableViewCell.identifier, for: indexPath) as! ProjectTableViewCell
-//        if let item = projects?[indexPath.item] {
-//            projectCell.viewModel = item
-//                    projectCell.selectionStyle = .none
-//                }
-//        return projectCell
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: ProjectTableViewCell.identifier,
             for: indexPath
         ) as? ProjectTableViewCell else { return UITableViewCell() }
-//        cell.viewModel = viewModel.item(at: indexPath.row)
         cell.viewModel = ProjectListViewModel.shared.item(at: indexPath.row)
         return cell
     }
